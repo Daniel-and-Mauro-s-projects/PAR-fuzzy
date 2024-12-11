@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Task 1}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Chosen Features}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Fuzzy Sets}{2}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Abnormal Subdomains}{2}{subsubsection.2.2.1}%
