@@ -90,17 +90,37 @@ To design the fuzzy expert system to detect phising websites, we consulted \cite
 \subsection{Chosen Features}
 Chosen variables
 
-We selected URL-based features, content features and external features
+We selected features from each of the three categories presented in the paper: URL-based features, content features and external features. 
 
-- Abnormal Subdomains (32) (boolean)
-- Domain Age (83) (int)
-- HTTPS token (25) (boolean)
-- Ratio external hyperlinks (59) (float)
-- Google Index (86) (boolean)
-- Page rank (87) (int)
+URL-based features:
+\begin{itemize}
+    \item Redirections (38) (int)
+    URL redirection is a technique used to open pages with different URLs
+than those initially selected by users. This is useful to prevent access to
+broken links when web pages are moved. URLs can be redirected to pages
+with the same domain (i.e. internal redirection) or to pages from different
+domains (i.e., external redirections). However, redirection can also be used
+for hostile purposes.
+    \item Domain Age (83) (int)
+\end{itemize}
 
+Content features:
+\begin{itemize}
+    \item Ratio external hyperlinks (59) (float)
+\end{itemize}
+
+External features:
+\begin{itemize}
+    \item Google Index (86) (boolean)
+    \item Page rank (87) (int)
+\end{itemize}
 
 \subsection{Fuzzy Sets}
+For the output variable, you must define four fuzzy categories: safe, weakly 
+suspicious, strongly suspicions and phishing. In addition to the category class, we want to get a 
+numerical score in the range of 0..100
+
+
 \subsubsection{Abnormal Subdomains}
 
 
