@@ -85,7 +85,7 @@ For this work, we
 % TODO  write introduction
 
 \section{Task 1}
-To design the fuzzy expert system to detect phising websites, we consulted \cite{main_paper}. In this paper, they list 87 posible features (boolean, floats and integers) that could matter in the detection of phising websites. 
+To design the fuzzy expert system to detect phishing websites, we consulted \cite{main_paper}. In this paper, they list 87 posible features (boolean, floats and integers) that could matter in the detection of phishing websites. 
 
 \subsection{Chosen Features}
 Chosen variables
@@ -94,13 +94,9 @@ We selected features from each of the three categories presented in the paper: U
 
 URL-based features:
 \begin{itemize}
-    \item Redirections (38) (int)
-    URL redirection is a technique used to open pages with different URLs
-than those initially selected by users. This is useful to prevent access to
-broken links when web pages are moved. URLs can be redirected to pages
-with the same domain (i.e. internal redirection) or to pages from different
-domains (i.e., external redirections). However, redirection can also be used
-for hostile purposes.
+    \item Phish Hints (51) (int)
+    Phishing URLs use sensitive words to gain trust on visited web pages. The
+number of such words in URLs is considered as phishing indicato
     \item Domain Age (83) (int)
 \end{itemize}
 
@@ -111,8 +107,10 @@ Content features:
 
 External features:
 \begin{itemize}
-    \item Google Index (86) (boolean)
-    \item Page rank (87) (int)
+    \item Google Index (86) (boolean) Phishing websites live for short times and are often accessible through direct links sent to users in emails, they do not need to be indexed by
+    Google. Web pages not indexed by Google are supposed phishing
+    \item Page rank (87) (int) Phishing web pages are not very popular, hence, they suppose to save low page ranks compared with legitimate web pages. We use Openpagerank to get the value of this feature \textbf{In the end we chose Google Pagerank that is 0-10}
+    
 \end{itemize}
 
 \subsection{Fuzzy Sets}

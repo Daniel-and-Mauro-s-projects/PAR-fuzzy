@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.24)  11 DEC 2024 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.24)  11 DEC 2024 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1055,7 +1055,8 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.80 \newpage
-              [1] [2] [3] (./main.aux)
+              [1] [2{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}] [3] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1067,24 +1068,25 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30086 strings out of 474222
- 567391 string characters out of 5748732
- 1927975 words of memory out of 5000000
- 51908 multiletter control sequences out of 15000+600000
- 564421 words of font info for 58 fonts, out of 8000000 for 9000
+ 30093 strings out of 474222
+ 567527 string characters out of 5748732
+ 1930975 words of memory out of 5000000
+ 51913 multiletter control sequences out of 15000+600000
+ 564762 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,5n,93p,1129b,1295s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,5n,93p,1129b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (4 pages, 345252 bytes).
+s/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1095.pfb>
+Output written on main.pdf (4 pages, 356785 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  12 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

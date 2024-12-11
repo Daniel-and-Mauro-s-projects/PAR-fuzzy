@@ -1,0 +1,73 @@
+[System]
+Name='Fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=5
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Domain Age'
+Range=[0 120]
+NumMFs=5
+MF1='New':'trapmf',[0 0 12 24]
+MF2='Relatively New':'trimf',[12 24 48]
+MF3='Normal':'trimf',[24 48 60]
+MF4='Old':'trimf',[48 60 80]
+MF5='Super Old':'trapmf',[60 80 120 120]
+
+[Input2]
+Name='Phish Hints'
+Range=[0 20]
+NumMFs=3
+MF1='Low':'trimf',[0 0 7]
+MF2='Medium':'trapmf',[0 7 10 15]
+MF3='High':'trapmf',[10 15 20 20]
+
+[Input3]
+Name='Ratio External'
+Range=[0 1]
+NumMFs=3
+MF1='Low ':'trapmf',[0 0 0.1 0.15]
+MF2='Medium':'trimf',[0.1 0.15 0.4]
+MF3='High':'trapmf',[0.15 0.4 1 1]
+
+[Input4]
+Name='Google Index'
+Range=[0 1]
+NumMFs=2
+MF1='No':'trimf',[0 0 1]
+MF2='Yes':'trimf',[0 1 1]
+
+[Input5]
+Name='Google Page Rank'
+Range=[0 10]
+NumMFs=3
+MF1='Low':'trapmf',[0 0 2 3]
+MF2='Medium':'trapmf',[2 3 5 6]
+MF3='High':'trapmf',[5 6 10 10]
+
+[Output1]
+Name='Phising Risk'
+Range=[0 100]
+NumMFs=4
+MF1='Safe':'trimf',[0 0 25]
+MF2='Weak ':'trapmf',[0 25 40 50]
+MF3='Strong':'trapmf',[40 50 60 70]
+MF4='Phising':'trapmf',[60 70 100 100]
+
+[Rules]
+1 1 0 0 0, 1 (1) : 1
+2 1 0 0 0, 1 (1) : 1
+3 1 0 0 0, 1 (1) : 1
+1 2 0 0 0, 1 (1) : 1
+2 2 0 0 0, 1 (1) : 1
+3 2 0 0 0, 1 (1) : 1
+1 3 0 0 0, 1 (1) : 1
+2 3 0 0 0, 1 (1) : 1
+3 3 0 0 0, 1 (1) : 1
