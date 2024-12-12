@@ -427,7 +427,7 @@ This section presents the testing of the fuzzy system. Four test cases, represen
 
 \subsection{Test Cases}
 
-The dataset used by \cite{main_paper} includes legitimate and phishing websites. Finding phishing websites that are still active was challenging, as they are often unavailable for extended periods. For the domain age, the data provided in the dataset (accurate at the time of creation) was used.
+The dataset used by ~\cite{mainpaper} includes legitimate and phishing websites. Finding phishing websites that are still active was challenging, as they are often unavailable for extended periods. For the domain age, the data provided in the dataset (accurate at the time of creation) was used.
 
 \subsubsection{Case 1: Phishing Website}
 
@@ -440,7 +440,7 @@ The dataset used by \cite{main_paper} includes legitimate and phishing websites.
         \item Phish Hints: $0$
         \item Ratio of External Hyperlinks: $1.0$
         \item Google Index: $1$
-        \item Page Rank: $0$
+        \item GTR: $0$
     \end{itemize}
     \begin{figure}[h!]
         \centering
@@ -449,7 +449,7 @@ The dataset used by \cite{main_paper} includes legitimate and phishing websites.
     \end{figure}
     \item \textbf{Rules Activated:} 
     \begin{itemize}
-        \item \textbf{Rule 5:} If Phish Hints is Low and Google Page Rank is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 5:} If Phish Hints is Low and Google GTR is Low, then Phishing Risk is Strong
         \item \textbf{Rule 9:} If Google Index is Yes, then Phishing Risk is Safe
         \item \textbf{Rule 20:} If Domain Age is New and Ratio of External Hyperlinks is High, then Phishing Risk is Phishing
     \end{itemize}
@@ -470,7 +470,7 @@ We see that the Google Index is not a clear indicator of phishing, as the site i
         \item Phish Hints: $2$
         \item Ratio of External Hyperlinks: $0.4545$
         \item Google Index: $1$
-        \item Page Rank: $2$
+        \item GTR: $2$
     \end{itemize}
     \begin{figure}[h!]
         \centering
@@ -479,8 +479,8 @@ We see that the Google Index is not a clear indicator of phishing, as the site i
     \end{figure}
     \item \textbf{Rules Activated:} 
     \begin{itemize}
-        \item \textbf{Rule 5:} If Phish Hints is Low and Google Page Rank is Low, then Phishing Risk is Strong
-        \item \textbf{Rule 6:} If Phish Hints is Medium and Google Page Rank is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 5:} If Phish Hints is Low and Google GTR is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 6:} If Phish Hints is Medium and Google GTR is Low, then Phishing Risk is Strong
         \item \textbf{Rule 9:} If Google Index is Yes, then Phishing Risk is Safe
         \item \textbf{Rule 20:} If Domain Age is New and Ratio of External Hyperlinks is High, then Phishing Risk is Phishing
     \end{itemize}
@@ -488,7 +488,7 @@ We see that the Google Index is not a clear indicator of phishing, as the site i
     \item Classification for 61.2: \textbf{Phishing} (with membership 1)
 \end{itemize}
 
-The site is classified as phishing due to its relatively new domain age, high ratio of external hyperlinks, and the presence of phishing hints. The Google Page Rank is low, but the Google Index is active again, which does not seem to be a strong indicator of phishing.
+The site is classified as phishing due to its relatively new domain age, high ratio of external hyperlinks, and the presence of phishing hints. The Google GTR is low, but the Google Index is active again, which does not seem to be a strong indicator of phishing.
 
 \subsubsection{Case 3: Legitimate Website}
 
@@ -501,7 +501,7 @@ The site is classified as phishing due to its relatively new domain age, high ra
         \item Phish Hints: $0$
         \item Ratio of External Hyperlinks: $0.1428$
         \item Google Index: $0$
-        \item Page Rank: $4$
+        \item GTR: $4$
     \end{itemize}
     \begin{figure}[h!]
         \centering
@@ -510,7 +510,7 @@ The site is classified as phishing due to its relatively new domain age, high ra
     \end{figure}
     \item \textbf{Rules Activated:} 
     \begin{itemize}
-        \item \textbf{Rule 2:} If Phish Hints is Low and Google Page Rank is Medium, then Phishing Risk is Weak
+        \item \textbf{Rule 2:} If Phish Hints is Low and Google GTR is Medium, then Phishing Risk is Weak
         \item \textbf{Rule 8:} If Google Index is No, then Phishing Risk is Phishing
         \item \textbf{Rule 19:} If Domain Age is Normal and Ratio of External Hyperlinks is Low, then Phishing Risk is Weak
     \end{itemize}
@@ -531,7 +531,7 @@ Despite being a legitimate site, the system classifies it as likely phishing due
         \item Phish Hints: $0$
         \item Ratio of External Hyperlinks: $0.1305$
         \item Google Index: $1$
-        \item Page Rank: $7$
+        \item GTR: $7$
     \end{itemize}
     \begin{figure}[h!]
         \centering
@@ -540,7 +540,7 @@ Despite being a legitimate site, the system classifies it as likely phishing due
     \end{figure}
     \item \textbf{Rules Activated:} 
     \begin{itemize}
-        \item \textbf{Rule 1:} If Google Page Rank is High, then Phishing Risk is Safe
+        \item \textbf{Rule 1:} If Google GTR is High, then Phishing Risk is Safe
         \item \textbf{Rule 9:} If Google Index is Yes, then Phishing Risk is Safe
         \item \textbf{Rule 11:} If Domain Age is Old or Ratio of External Hyperlinks is Low, then Phishing Risk is Safe
         \item \textbf{Rule 18:} If Domain Age is New and Ratio of External Hyperlinks is Low, then Phishing Risk is Strong
@@ -550,7 +550,7 @@ Despite being a legitimate site, the system classifies it as likely phishing due
     \item Classification for 32.8: \textbf{Weak} (with membership 0.52)
 \end{itemize}
 
-The high Google Page Rank is a strong indicator of legitimacy. The site also has a low ratio of external hyperlinks, which is another indicator of trustworthiness. The site is classified as weak, which is expected for a well-known site like Wikipedia.
+The high Google GTR is a strong indicator of legitimacy. The site also has a low ratio of external hyperlinks, which is another indicator of trustworthiness. The site is classified as weak, which is expected for a well-known site like Wikipedia.
 
 \section{Complex Fuzzy Expert System}
 Design (just graphically, no implementation) a more complete fuzzy expert system that 
