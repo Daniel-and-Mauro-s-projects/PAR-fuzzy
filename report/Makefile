@@ -12,7 +12,7 @@ all: help
 ## biber main is not working (do on terminal)
 ## PDFLATEX
 pdf: ## Compile main.tex to PDF using pdflatex.
-	@pdflatex main.tex
+	@pdflatex -interaction=nonstopmode main.tex
 
 ## HOT RELOAD
 hot-reload: ## Watch main.tex and recompile on changes.
