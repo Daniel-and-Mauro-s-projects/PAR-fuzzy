@@ -19,7 +19,114 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{main_paper}{article}{}
+    \entry{externalhyperlinks}{article}{}
+      \name{author}{7}{}{%
+        {{hash=0f0f0d6c0fbd9f174327c7364de3fd71}{%
+           family={Aljofey},
+           familyi={A\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2c2685db35af46d3776a5278fb1a02aa}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Qingshan},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=9e57b0dd8fe2f71c65596afa3f3a3093}{%
+           family={Rasool},
+           familyi={R\bibinitperiod},
+           given={Abdur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=92f386b2333cf6bddfa01a270cab627d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=19f5490b3b440faede0dfbcdfd703d5c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Wenyin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=4c6be711ca4d51ad824304a13682de95}{%
+           family={Qu},
+           familyi={Q\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=a84866b4900b3fe9a714de1f78dbf282}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{69838742d3d4f97fa156628122ea1094}
+      \strng{fullhash}{a7de98c7fb4d0e0057a2a32fa493e41b}
+      \strng{bibnamehash}{69838742d3d4f97fa156628122ea1094}
+      \strng{authorbibnamehash}{69838742d3d4f97fa156628122ea1094}
+      \strng{authornamehash}{69838742d3d4f97fa156628122ea1094}
+      \strng{authorfullhash}{a7de98c7fb4d0e0057a2a32fa493e41b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{month}{5}
+      \field{number}{1}
+      \field{title}{An effective detection approach for phishing websites using URL and HTML features}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{8842}
+      \range{pages}{1}
+    \endentry
+    \entry{introduction2}{article}{}
+      \name{author}{5}{}{%
+        {{hash=069d775c075a4b6fb9856a8fe77591d0}{%
+           family={Dou},
+           familyi={D\bibinitperiod},
+           given={Zuochao},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=79e929fa10da92dc334c84ad44fc54eb}{%
+           family={Khalil},
+           familyi={K\bibinitperiod},
+           given={Issa},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f6d007a92bc362757bae6aecc1b92091}{%
+           family={Khreishah},
+           familyi={K\bibinitperiod},
+           given={Abdallah},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8868a3dff96deabbbb427b120f6f2281}{%
+           family={Al-Fuqaha},
+           familyi={A\bibinithyphendelim F\bibinitperiod},
+           given={Ala},
+           giveni={A\bibinitperiod}}}%
+        {{hash=05189762dbb0ad87814451304904fe83}{%
+           family={Guizani},
+           familyi={G\bibinitperiod},
+           given={Mohsen},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c4c775b9514829a83350dbdb8dfc2b4}
+      \strng{fullhash}{e06bb74d62e473345fc45ee69151d2a9}
+      \strng{bibnamehash}{1c4c775b9514829a83350dbdb8dfc2b4}
+      \strng{authorbibnamehash}{1c4c775b9514829a83350dbdb8dfc2b4}
+      \strng{authornamehash}{1c4c775b9514829a83350dbdb8dfc2b4}
+      \strng{authorfullhash}{e06bb74d62e473345fc45ee69151d2a9}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Communications Surveys & Tutorials}
+      \field{number}{4}
+      \field{title}{Systematization of Knowledge (SoK): A Systematic Review of Software-Based Web Phishing Detection}
+      \field{volume}{19}
+      \field{year}{2017}
+      \field{pages}{2797\bibrangedash 2819}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1109/COMST.2017.2752087
+      \endverb
+      \keyw{Systematics;Phishing;Feature extraction;Web sites;Phishing;Phishing website detection;software based methods}
+    \endentry
+    \entry{mainpaper}{article}{}
       \name{author}{2}{}{%
         {{hash=fa59f35fa3ad7439b88210c1580e6b64}{%
            family={Hannousse},
@@ -59,6 +166,126 @@
       \verb https://www.sciencedirect.com/science/article/pii/S0952197621001950
       \endverb
       \keyw{Website phishing attacks,Machine learning,Dataset benchmarking,Information security}
+    \endentry
+    \entry{domainage}{article}{}
+      \name{author}{5}{}{%
+        {{hash=67b62cb27c3f0ca6152ead01e078b17a}{%
+           family={Hranický},
+           familyi={H\bibinitperiod},
+           given={Radek},
+           giveni={R\bibinitperiod}}}%
+        {{hash=882f48898e16b82f06e8433b42110724}{%
+           family={Horák},
+           familyi={H\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1c764e71f2fab58a60424526176f5ca2}{%
+           family={Polišenský},
+           familyi={P\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ae8d630611e4d0f25b184e5729072cf8}{%
+           family={Jeřábek},
+           familyi={J\bibinitperiod},
+           given={Kamil},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f66acaf5b2531fdd6e19a4020900c656}{%
+           family={Ryšavý},
+           familyi={R\bibinitperiod},
+           given={Ondřej},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{941536d0b3f9e054efc2f582fdb18cb0}
+      \strng{fullhash}{51d6ef0e08b5f9177ffc74e09da20b5a}
+      \strng{bibnamehash}{941536d0b3f9e054efc2f582fdb18cb0}
+      \strng{authorbibnamehash}{941536d0b3f9e054efc2f582fdb18cb0}
+      \strng{authornamehash}{941536d0b3f9e054efc2f582fdb18cb0}
+      \strng{authorfullhash}{51d6ef0e08b5f9177ffc74e09da20b5a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{NOMS 2024-2024 IEEE Network Operations and Management Symposium}
+      \field{title}{Unmasking the Phishermen: Phishing Domain Detection with Machine Learning and Multi-Source Intelligence}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/NOMS59830.2024.10575573
+      \endverb
+      \keyw{Training;Support vector machines;Phishing;Soft sensors;Standards organizations;Machine learning;Vectors;Phishing;Domain;Detection;Machine learning;XGBoost;Features;DNS;RDAP;TLS;GeoIP}
+    \endentry
+    \entry{GTR}{article}{}
+      \name{author}{2}{}{%
+        {{hash=032521cf91e87e95ee89b54219120d3a}{%
+           family={Naga\bibnamedelimb Venkata\bibnamedelima Sunil},
+           familyi={N\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=619c193c234d325d7ceffb874c402a6a}{%
+           family={Sardana},
+           familyi={S\bibinitperiod},
+           given={Anjali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0eee592fc28ca41939c4bd92939db91b}
+      \strng{fullhash}{0eee592fc28ca41939c4bd92939db91b}
+      \strng{bibnamehash}{0eee592fc28ca41939c4bd92939db91b}
+      \strng{authorbibnamehash}{0eee592fc28ca41939c4bd92939db91b}
+      \strng{authornamehash}{0eee592fc28ca41939c4bd92939db91b}
+      \strng{authorfullhash}{0eee592fc28ca41939c4bd92939db91b}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 IEEE Symposium on Computers & Informatics (ISCI)}
+      \field{title}{A PageRank based detection technique for phishing web sites}
+      \field{year}{2012}
+      \field{pages}{58\bibrangedash 63}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ISCI.2012.6222667
+      \endverb
+      \keyw{Google;Accuracy;IP networks;Training;Web sites;Testing;Electronic mail;Phishing;PageRank;Google Toolbar Rank}
+    \endentry
+    \entry{introduction1}{article}{}
+      \name{author}{3}{}{%
+        {{hash=34378122043de39be7ef0fb5e9d5a25b}{%
+           family={Zieni},
+           familyi={Z\bibinitperiod},
+           given={Rasha},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e719bcd0d3d90a9bf694243ac077d6d1}{%
+           family={Massari},
+           familyi={M\bibinitperiod},
+           given={Luisa},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0b3386647f00b706f4373bf7651ae8df}{%
+           family={Calzarossa},
+           familyi={C\bibinitperiod},
+           given={Maria\bibnamedelima Carla},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{59e322db237817a8c2315508acff4a3a}
+      \strng{fullhash}{59e322db237817a8c2315508acff4a3a}
+      \strng{bibnamehash}{59e322db237817a8c2315508acff4a3a}
+      \strng{authorbibnamehash}{59e322db237817a8c2315508acff4a3a}
+      \strng{authornamehash}{59e322db237817a8c2315508acff4a3a}
+      \strng{authorfullhash}{59e322db237817a8c2315508acff4a3a}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Phishing or Not Phishing? A Survey on the Detection of Phishing Websites}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{18499\bibrangedash 18519}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2023.3247135
+      \endverb
+      \keyw{Phishing;Uniform resource locators;Machine learning;Security;Blocklists;Visualization;Market research;Social engineering (security);Phishing;security threat;phishing website;phishing detection;URL;blacklists;machine learning;page similarity;datasets;social engineering}
     \endentry
   \enddatalist
 \endrefsection

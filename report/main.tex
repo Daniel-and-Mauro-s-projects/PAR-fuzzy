@@ -11,7 +11,7 @@
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{algorithm}
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 \usepackage{algpseudocode}
 \usepackage{tikz}
 \usepackage{schemata}
@@ -20,7 +20,8 @@
 \usepackage{pgfplots}
 \usepackage[toc,page]{appendix}
 
-\addbibresource{bibliography.bib}
+\addbibresource{references.bib}
+
 
 
 % Set page margins
@@ -86,7 +87,7 @@ For this work, we
 % TODO  write introduction
 
 \section{Task 1}
-To design the fuzzy expert system to detect phishing websites, we consulted \cite{main_paper}. In this paper, they list 87 posible features (boolean, floats and integers) that could matter in the detection of phishing websites. The proposed features are divided into three categories: URL-based features, content features and external features. From this proposed variables, we selected 5 features that we consider relevant for the detection of phishing websites.
+To design the fuzzy expert system to detect phishing websites, we consulted ~\cite{mainpaper}. In this paper, they list 87 possible features (boolean, floats and integers) that could matter in the detection of phishing websites. The proposed features are divided into three categories: URL-based features, content features and external features. From this proposed variables, we selected 5 features that we consider relevant for the detection of phishing websites. For inspiration and further understanding of the problem, we consulted the following articles: \cite{introduction1} and \cite{introduction2}.
 
 \subsection{Chosen Features}
 
@@ -94,8 +95,8 @@ To design the fuzzy expert system to detect phishing websites, we consulted \cit
 \subsubsection{URL-based features:}
 \textbf{Phish Hints} 
 \begin{itemize}
-    \item \textbf{Description:} Number of words in the URL that are typical of phishing websites
-    \item \textbf{Integer}. Number 51 in the paper
+    \item \textbf{Description} Number of words in the URL that are typical of phishing websites
+    \item \textbf{Integer} Number 51 in the paper
 \end{itemize}
 
 \begin{figure}[H]
@@ -134,7 +135,7 @@ To design the fuzzy expert system to detect phishing websites, we consulted \cit
 \textbf{Domain Age} 
 \begin{itemize}
     \item \textbf{Description:} Age of the page in months
-    \item \textbf{Integer}. Number 83 in the paper
+    \item \textbf{Integer} Number 83 in the paper
 \end{itemize}
 
 \begin{figure}[H]
@@ -181,7 +182,7 @@ To design the fuzzy expert system to detect phishing websites, we consulted \cit
 \textbf{Ratio External Hyperlinks} 
 \begin{itemize}
     \item \textbf{Description:} The number of external hyperlinks in a web page divided by the total number of hyperlinks
-    \item \textbf{Float}. Number 59 in the paper
+    \item \textbf{Float} Number 59 in the paper
 \end{itemize}
 
 \begin{figure}[H]
@@ -224,7 +225,7 @@ To design the fuzzy expert system to detect phishing websites, we consulted \cit
 \textbf{Google Index} 
 \begin{itemize}
     \item \textbf{Description:} Whether a page is indexed in Google
-    \item \textbf{Boolean}. Number 86 in the paper
+    \item \textbf{Boolean} Number 86 in the paper
 \end{itemize}
 
 \begin{figure}[H]
@@ -256,10 +257,10 @@ To design the fuzzy expert system to detect phishing websites, we consulted \cit
 
 
 
-\textbf{Page Rank} 
+\textbf{GTR} 
 \begin{itemize}
-    \item \textbf{Description:} In the end, we chose Google PageRank which follows the same mantra
-    \item \textbf{Integer}. Number 87 in the paper
+    \item \textbf{Description:} It is a slight modification of the usual GTR, created by Google. It means Google Toolbar Rank and takes values from 0 to 10.
+    \item \textbf{Integer} Number 87 in the paper
 \end{itemize}
 
 \begin{figure}[H]
@@ -288,7 +289,7 @@ To design the fuzzy expert system to detect phishing websites, we consulted \cit
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Google Page Rank}
+    \caption{Membership Function Google GTR}
 \end{figure}
 
 
@@ -331,12 +332,94 @@ Our output variable will be the phishing risk, where we will consider 5 differen
     \label{output_variable}
 \end{figure}
 
+
+
+
+% ----------------
 \section{Rules}
 
+To design the rules involving Google Index, we consulted ~\cite{mainpaper}, where they state that pages not indexed by google are more likely to be phishing websites. For this reason we created the rules in \ref{google_index_rules}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Google Index} & \textbf{Phishing Risk} & \textbf{Weight} \\ \hline
+        NO                    & PHISHY                 & 1               \\ \hline
+        YES                   & WEAK                   & 1               \\ \hline
+    \end{tabular}
+    \caption{Rules for Google Index}
+    \label{google_index_rules}
+\end{table}
+
+For the GTR, we consulted ~\cite{GTR}, where they state the following:
+
+\begin{quote}
+    \textit{GTR value is considered as a heuristic because PageRank value for legitimate site will be high and for phishing pages its value will be less}
+\end{quote}
+
+In the case of the Phish Hints, it is already explained in ~\cite{mainpaper} that more Phish Hints in the URL is an indicator of a phishing website. For this reason, we introduced the rules in Table \ref{page_rank_phish_hints_rules}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{GTR} & \textbf{Phis Hints} & \textbf{Operator} & \textbf{Phishing Risk} & \textbf{Weight} \\ \hline
+    HIGH               &                     &                   & SAFE                   & 1               \\ \hline
+    MEDIUM             & LOW                 & AND               & WEAK                   & 0.5             \\ \hline
+    MEDIUM             & MEDIUM              & AND               & STRONG                 & 1               \\ \hline
+    MEDIUM             & HIGH                & AND               & PHISHY                 & 1               \\ \hline
+    LOW                & LOW                 & AND               & STRONG                 & 0.5             \\ \hline
+    LOW                & MEDIUM              & AND               & STRONG                 & 1               \\ \hline
+    LOW                & HIGH                & AND               & PHISHY                 & 1               \\ \hline
+    \end{tabular}
+    \caption{Rules for Google GTR and Phish Hints}
+    \label{page_rank_phish_hints_rules}
+\end{table}
+
+
+To evaluate the effect of the domain age feature, we consulted ~\cite{domainage}, where they state the following:
+
+\begin{quote}
+\textit{The top feature in the list is domain age, which confirms our assumptions that long-running services are statistically more credible}
+\end{quote}
+
+For this reason, we will consider that the older the domain, the less likely it is to be a phishing website. On the other hand, to evaluate the effect of the ratio of external hyperlinks, we consulted ~\cite{externalhyperlinks}, where the following is affirmed:
+
+\begin{quote}
+\textit{Phishing websites often include numerous external hyperlinks pointing to target websites because cybercriminals frequently replicate the HTML code from legitimate websites to construct their phishing sites.}
+\end{quote}
+
+All of this information, lead to the creation of the rules seen in Table \ref{domainage_hyperlinks_rules}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llllll}
+                          &                                     &                                          &                               &                                    &                             \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Domain Age}}     & \multicolumn{1}{l|}{\textbf{Ratio of Hyperlinks}} & \multicolumn{1}{l|}{\textbf{Operator}} & \multicolumn{1}{l|}{\textbf{Phishing Risk}} & \multicolumn{1}{l|}{\textbf{Weight}} \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{SUPER OLD}      & \multicolumn{1}{l|}{}                    & \multicolumn{1}{l|}{}         & \multicolumn{1}{l|}{SAFE}          & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{OLD}            & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{OR}       & \multicolumn{1}{l|}{SAFE}          & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NORMAL}         & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{WEAK}          & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NORMAL}         & \multicolumn{1}{l|}{MEDIUM}              & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NORMAL}         & \multicolumn{1}{l|}{HIGH}                & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{RELATIVELY NEW} & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{WEAK}          & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{RELATIVELY NEW} & \multicolumn{1}{l|}{MEDIUM}              & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{RELATIVELY NEW} & \multicolumn{1}{l|}{HIGH}                & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{PHISHY}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NEW}            & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NEW}            & \multicolumn{1}{l|}{MEDIUM}              & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NEW}            & \multicolumn{1}{l|}{HIGH}                & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{PHISHY}        & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
+    \end{tabular}
+    \caption{Rules for Domain Age and Ratio of External Hyperlinks}
+    \label{domainage_hyperlinks_rules}
+\end{table}
+
+
+
+
 \section{Implementation}
-- Mamdami system (min as t-norm and max as t-conorm)
-- Defuzzification Method: Center of Area
-- Validate the system using the 3D plot of the rules. ??????????? WTF %TODO
+In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the fuzzy expert system. The system was designed using the Mamdani fuzzy inference method, which is well-suited for decision-making processes that require a human-like reasoning approach. In this system, we employed the minimum (min) operation as the t-norm for the intersection of fuzzy sets, and the maximum (max) operation as the t-conorm for the union of fuzzy sets. For the defuzzification process, we selected the Center of Area (CoA) method, which calculates the centroid of the aggregated fuzzy set to produce a crisp output. This approach ensures that the output is a balanced representation of the input conditions, providing a reliable decision-making framework for detecting phishing websites.
+
+To validate the fuzzy expert system, we employed the MATLAB 3D plot. As this plot only allows the representation of 2 inputs and the output at a time, we viewed the 10 possible combinations, all of which were consistent. At the same time, every possible combination was covered, as no combination was left without a rule being activated.
 
 \section{Testing}
 - 4 Test case that represent different situation (some must activate more than one lable)
@@ -349,7 +432,7 @@ Design (just graphically, no implementation) a more complete fuzzy expert system
 includes more features about the websites. Show in a figure the inputs, outputs, and rule blocks 
 that you propose for such expert system. No specific definition of variables nor rules is required. 
 
-- We can use a hirarchical rule system
+- We can use a hierarchical rule system
 
 % Bibliography
 \newpage

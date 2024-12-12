@@ -6,6 +6,6 @@
 \contentsline {subsubsection}{\numberline {2.1.3}External features:}{3}{subsubsection.2.1.3}%
 \contentsline {section}{\numberline {3}Output Variable}{4}{section.3}%
 \contentsline {section}{\numberline {4}Rules}{5}{section.4}%
-\contentsline {section}{\numberline {5}Implementation}{5}{section.5}%
-\contentsline {section}{\numberline {6}Testing}{5}{section.6}%
-\contentsline {section}{\numberline {7}Complex Fuzzy Expert System}{5}{section.7}%
+\contentsline {section}{\numberline {5}Implementation}{6}{section.5}%
+\contentsline {section}{\numberline {6}Testing}{6}{section.6}%
+\contentsline {section}{\numberline {7}Complex Fuzzy Expert System}{6}{section.7}%
