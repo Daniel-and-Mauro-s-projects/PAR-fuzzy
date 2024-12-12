@@ -422,20 +422,135 @@ In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the
 To validate the fuzzy expert system, we employed the MATLAB 3D plot. As this plot only allows the representation of 2 inputs and the output at a time, we viewed the 10 possible combinations, all of which were consistent. At the same time, every possible combination was covered, as no combination was left without a rule being activated.
 
 \section{Testing}
-- 4 Test case that represent different situation (some must activate more than one lable)
-- Report the results of each testing case with 
-screenshots  and  explanations  that  justify the output  obtained  (i.e.  showing  the  activations of  
-rules)
 
-We test it for the following cases:
-Phising: 
-https://dichvuvnpt.com/home/components/com_user/bbtonline.html
+This section presents the testing of the fuzzy system. Four test cases, representing different scenarios, are evaluated. Some cases are designed to activate multiple rules. The results of each test case are reported with screenshots and explanations to justify the obtained outputs, including the activations of the rules. In the screenshots, we only provide the rules that are activated in each case.
 
-Phish hints: 0
-Domain Age: 3767
-Ratio External Hyperlinks: 1.0
-Google Index: 1
-Page rank: 0
+\subsection{Test Cases}
+
+The dataset used by \cite{main_paper} includes legitimate and phishing websites. Finding phishing websites that are still active was challenging, as they are often unavailable for extended periods. For the domain age, the data provided in the dataset (accurate at the time of creation) was used.
+
+\subsubsection{Case 1: Phishing Website}
+
+\begin{itemize}
+    \item \textbf{URL:} \url{https://dichvuvnpt.com/home/components/com_user/bbtonline.html}
+    \item \textbf{Personal Opinion:} The site appears suspicious at first glance, as the formatting seems a bit off. The URL is also suspicious, but it is not immediately obvious that it is phishing.
+    \item \textbf{Attributes:}
+    \begin{itemize}
+        \item Domain Age: $3767$ hours $= 7.1$ months
+        \item Phish Hints: $0$
+        \item Ratio of External Hyperlinks: $1.0$
+        \item Google Index: $1$
+        \item Page Rank: $0$
+    \end{itemize}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{test-1.png}
+        \caption{Test Case 1: Phishing Website}
+    \end{figure}
+    \item \textbf{Rules Activated:} 
+    \begin{itemize}
+        \item \textbf{Rule 5:} If Phish Hints is Low and Google Page Rank is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 9:} If Google Index is Yes, then Phishing Risk is Safe
+        \item \textbf{Rule 20:} If Domain Age is New and Ratio of External Hyperlinks is High, then Phishing Risk is Phishing
+    \end{itemize}
+    \item \textbf{Output:} $60.9$
+    \item Classification for 60.9: \textbf{Strong} (with membership 1)
+\end{itemize}
+
+We see that the Google Index is not a clear indicator of phishing, as the site is indexed but still classified as phishing. The high ratio of external hyperlinks and relatively new domain age are the main factors leading to this classification.
+
+\subsubsection{Case 2: Phishing Website}
+
+\begin{itemize}
+    \item \textbf{URL:} \url{https://www.courgeon-immobilier.fr/} (line 6593)
+    \item \textbf{Personal Opinion:} The site initially appears professional and trustworthy. However, closer inspection reveals phishing behavior (e.g., fake social media links).
+    \item \textbf{Attributes:}
+    \begin{itemize}
+        \item Domain Age: $2300$ hours $= 3.15$ months
+        \item Phish Hints: $2$
+        \item Ratio of External Hyperlinks: $0.4545$
+        \item Google Index: $1$
+        \item Page Rank: $2$
+    \end{itemize}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{test-2.png}
+        \caption{Test Case 2: Phishing Website}
+    \end{figure}
+    \item \textbf{Rules Activated:} 
+    \begin{itemize}
+        \item \textbf{Rule 5:} If Phish Hints is Low and Google Page Rank is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 6:} If Phish Hints is Medium and Google Page Rank is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 9:} If Google Index is Yes, then Phishing Risk is Safe
+        \item \textbf{Rule 20:} If Domain Age is New and Ratio of External Hyperlinks is High, then Phishing Risk is Phishing
+    \end{itemize}
+    \item \textbf{Output:} $61.2$
+    \item Classification for 61.2: \textbf{Phishing} (with membership 1)
+\end{itemize}
+
+The site is classified as phishing due to its relatively new domain age, high ratio of external hyperlinks, and the presence of phishing hints. The Google Page Rank is low, but the Google Index is active again, which does not seem to be a strong indicator of phishing.
+
+\subsubsection{Case 3: Legitimate Website}
+
+\begin{itemize}
+    \item \textbf{URL:} \url{https://www.physiologyweb.com/lecture_notes/membrane_transport/secondary_active_transport.html} (line 6598)
+    \item \textbf{Personal Opinion:} The site is for educational purposes, and it would be unexpected for it to be phishing. 
+    \item \textbf{Attributes:}
+    \begin{itemize}
+        \item Domain Age: $3596$ hours $= 4.92$ months
+        \item Phish Hints: $0$
+        \item Ratio of External Hyperlinks: $0.1428$
+        \item Google Index: $0$
+        \item Page Rank: $4$
+    \end{itemize}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{test-3.png}
+        \caption{Test Case 3: Legitimate Website (False Positive)}
+    \end{figure}
+    \item \textbf{Rules Activated:} 
+    \begin{itemize}
+        \item \textbf{Rule 2:} If Phish Hints is Low and Google Page Rank is Medium, then Phishing Risk is Weak
+        \item \textbf{Rule 8:} If Google Index is No, then Phishing Risk is Phishing
+        \item \textbf{Rule 19:} If Domain Age is Normal and Ratio of External Hyperlinks is Low, then Phishing Risk is Weak
+    \end{itemize}
+    \item \textbf{Output:} $60.7$
+    \item Classification for 60.7: \textbf{Phishing} (with membership 0.9825), but Strong is also active with membership 1
+\end{itemize}
+
+Despite being a legitimate site, the system classifies it as likely phishing due to its relatively recent creation and lack of Google indexing. This is a false positive, as the site is a legitimate educational resource. 
+
+\subsubsection{Case 4: Legitimate Website}
+
+\begin{itemize}
+    \item \textbf{URL:} \url{https://en.wikipedia.org/wiki/Aurelio_Voltaire} (line 6638)
+    \item \textbf{Personal Opinion:} As Wikipedia is a well-known and trustworthy site, it is expected to be classified as legitimate.
+    \item \textbf{Attributes:}
+    \begin{itemize}
+        \item Domain Age: $7132$ hours $= 9.8$ months
+        \item Phish Hints: $0$
+        \item Ratio of External Hyperlinks: $0.1305$
+        \item Google Index: $1$
+        \item Page Rank: $7$
+    \end{itemize}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{test-4.png}
+        \caption{Test Case 4: Legitimate Website}
+    \end{figure}
+    \item \textbf{Rules Activated:} 
+    \begin{itemize}
+        \item \textbf{Rule 1:} If Google Page Rank is High, then Phishing Risk is Safe
+        \item \textbf{Rule 9:} If Google Index is Yes, then Phishing Risk is Safe
+        \item \textbf{Rule 11:} If Domain Age is Old or Ratio of External Hyperlinks is Low, then Phishing Risk is Safe
+        \item \textbf{Rule 18:} If Domain Age is New and Ratio of External Hyperlinks is Low, then Phishing Risk is Strong
+        \item \textbf{Rule 19:} If Domain Age is Normal and Ratio of External Hyperlinks is Low, then Phishing Risk is Weak
+    \end{itemize}
+    \item \textbf{Output:} $32.8$
+    \item Classification for 32.8: \textbf{Weak} (with membership 0.52)
+\end{itemize}
+
+The high Google Page Rank is a strong indicator of legitimacy. The site also has a low ratio of external hyperlinks, which is another indicator of trustworthiness. The site is classified as weak, which is expected for a well-known site like Wikipedia.
 
 \section{Complex Fuzzy Expert System}
 Design (just graphically, no implementation) a more complete fuzzy expert system that 
