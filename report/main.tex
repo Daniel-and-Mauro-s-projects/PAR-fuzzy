@@ -553,12 +553,120 @@ Despite being a legitimate site, the system classifies it as likely phishing due
 The high Google GTR is a strong indicator of legitimacy. The site also has a low ratio of external hyperlinks, which is another indicator of trustworthiness. The site is classified as weak, which is expected for a well-known site like Wikipedia.
 
 \section{Complex Fuzzy Expert System}
-Design (just graphically, no implementation) a more complete fuzzy expert system that 
-includes more features about the websites. Show in a figure the inputs, outputs, and rule blocks 
-that you propose for such expert system. No specific definition of variables nor rules is required. 
 
-- We can use a hierarchical rule system
+This fuzzy expert system is structured in two hierarchical layers. The first layer consists of three independent Mamdani fuzzy systems, each analyzing a specific dimension of a website: \textbf{URL-based features}, \textbf{Content-based features}, and \textbf{External-based features}. The outputs from these three systems are then combined in a second-layer Mamdani fuzzy system to compute the overall phishing risk.
 
+\subsection{Layer 1: Feature-Based Risk Assessments}
+
+The first layer is composed of three Mamdani fuzzy inference systems, each focusing on a specific feature category. These systems process their respective input features and generate risk levels as outputs:
+
+\begin{itemize}
+    \item URL Risk Mamdani System: 
+    
+    This system evaluates whether characteristics of the URL indicate phishing behavior, such as excessively long URLs or unusual characters.
+
+    Some outputs could be:
+    \begin{itemize}
+        \item URL Length (f1-f2)
+        \item Special Characters in the URL(f4-f20)
+    \end{itemize}
+
+    \item Content Risk Mamdani System:
+    
+    This system identifies suspicious behaviors within the webpage content, such as malicious forms or hidden elements designed to deceive users.
+
+    Some outputs could be:
+    \begin{itemize}
+        \item Number of Hyperlinks (f57)
+        \item Login Form Actions (f66)
+        \item Presence of Invisible  Iframes (f73)
+    \end{itemize}
+
+    \item External Risk Mamdani System:
+    
+    This system assesses external attributes that provide context about the website's legitimacy, such as its age or popularity.
+
+    Some outputs could be:
+    \begin{itemize}
+        \item Domain Age (f83)
+        \item Google Index Presence (f86)
+        \item Web Traffic Volume (f84)
+    \end{itemize}
+
+\end{itemize}
+
+\subsection{Layer 2: Overall Phishing Risk Assessment}
+
+The second layer takes the outputs from the first layer (URL Risk, Content Risk, External Risk) and synthesizes them into an overall phishing risk score using another Mamdani fuzzy inference system. Each of these risks carries a specific weight that reflects its relative importance in detecting phishing. The weights are designed to balance sensitivity (detecting as many phishing websites as possible) and precision (minimizing false positives).
+
+\subsection{Weight Distribution}
+
+The importance of each risk category (URL, Content, External) varies depending on how strongly it correlates with phishing behavior. By assigning appropriate weights, the system can prioritize the most reliable and impactful indicators:
+
+\begin{itemize}
+    \item URL Risk (40\%-50\%):
+    
+    This category carries the highest weight because a suspicious URL alone can often be enough to classify a website as high-risk. However, legitimate websites may also have long or unusual URLs, so this weight must be carefully balanced.
+
+    \item Content Risk (30\%-40\%):
+    
+    This category carries slightly less weight than URL risk because, while content indicators are highly relevant, legitimate websites can occasionally exhibit similar patterns (e.g., a minimalist design with few links). Nonetheless, content risk remains a strong contributing factor.
+
+    \item External Risk (20\%-30\%):
+    
+    External risks carry the lowest weight because they are indirect indicators. While they add valuable context, they are less conclusive compared to URL or content risks.
+
+\end{itemize}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=.8,auto=left, node style/.style={draw, ellipse, minimum width=3.2cm, minimum height=1cm}]
+        % Nodes
+        \node[node style, fill=cyan!30] (n6) at (-2,12) {URL-based features};
+        \node[node style, fill=cyan!30] (n4) at (-2,7)  {Content features};
+        \node[node style, fill=cyan!30] (n5) at (-2,2)  {External features};
+        \node[node style, fill=orange!30] (n1) at (7,10) {URL Risk};
+        \node[node style, fill=orange!30] (n2) at (7,7)  {Content Risk};
+        \node[node style, fill=orange!30] (n3) at (7,4)  {External Risk};
+        \node[node style, fill=red!30] (n7) at (17,7) {Phishing Risk};
+
+        % rules blocks
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, fill=yellow!30] (r1) at (2.5,11) {Rule Block 1};
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, fill=yellow!30] (r2) at (2.5,7) {Rule Block 2};
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, fill=yellow!30] (r3) at (2.5,3) {Rule Block 3};
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, fill=yellow!30] (r4) at (12,7) {Final Rule Block};
+
+        % Connections
+        \draw (n6) -- (r1);
+        \draw (r1) -- (n1);
+        \draw (n4) -- (r2);
+        \draw (r2) -- (n2);
+        \draw (n5) -- (r3);
+        \draw (r3) -- (n3);
+        \draw (n1) -- (r4);
+        \draw (n2) -- (r4);
+        \draw (n3) -- (r4);
+        \draw (r4) -- (n7);
+
+        \node[draw, rectangle, minimum width=1cm, minimum height=0.5cm, fill=cyan!30] at (11,5) {};
+        \node at (14,5) {Input Features};
+
+        \node[draw, rectangle, minimum width=1cm, minimum height=0.5cm, fill=yellow!30] at (11,4) {};
+        \node at (14,4) {Rule Blocks};
+
+        \node[draw, rectangle, minimum width=1cm, minimum height=0.5cm, fill=orange!30] at (11,3) {};
+        \node at (15,3) {Intermediate Outputs (Risks)};
+
+        \node[draw, rectangle, minimum width=1cm, minimum height=0.5cm, fill=red!30] at (11,2) {};
+        \node at (15, 2) {Final Output (Phishing Risk)};
+
+
+    \end{tikzpicture}
+    \caption{Hierarchical Fuzzy Expert System for Phishing Detection with Rule Blocks}
+    \label{fig:phishing_system_with_rules}
+\end{figure}
 % Bibliography
 \newpage
 \printbibliography
