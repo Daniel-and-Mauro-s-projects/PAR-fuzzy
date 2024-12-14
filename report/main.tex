@@ -83,20 +83,25 @@
 
 %---------------------------------------------------------------------------------------------------------------------------------
 \section{Introduction}
-For this work, we 
-% TODO  write introduction
+This report presents a fuzzy expert system designed to detect phishing websites. Phishing attacks are a significant cybersecurity threat, often leading to identity theft and financial losses. Traditional methods for detecting phishing websites have limitations in accurately identifying sophisticated attacks. Fuzzy logic, with its ability to handle uncertainty and imprecision, offers a promising approach to enhance phishing detection.
 
-\section{Task 1}
-To design the fuzzy expert system to detect phishing websites, we consulted ~\cite{mainpaper}. In this paper, they list 87 possible features (boolean, floats and integers) that could matter in the detection of phishing websites. The proposed features are divided into three categories: URL-based features, content features and external features. From this proposed variables, we selected 5 features that we consider relevant for the detection of phishing websites. For inspiration and further understanding of the problem, we consulted the following articles: \cite{introduction1} and \cite{introduction2}.
+Our fuzzy expert system leverages a set of carefully selected features to assess the risk of a website being malicious. These features encompass various aspects, including URL characteristics, content analysis, and external factors. By applying fuzzy logic rules, the system can effectively classify websites into different risk categories, ranging from safe to highly suspicious.
+
+This report details the design and implementation of the fuzzy expert system, including the selection of linguistic variables, the definition of membership functions, and the formulation of fuzzy rules. Additionally, we present the results of testing the system on a range of websites, both legitimate and malicious. The evaluation highlights the system's strengths and weaknesses, providing insights for future improvements.
+
+The goal of this work is to contribute to the development of robust and accurate phishing detection techniques, ultimately helping to protect users from online threats.
+
+\section{Definition of the Linguistic Variables}
+To design the fuzzy expert system for detecting phishing websites, we referred to ~\cite{mainpaper}. This paper lists 87 possible features (Boolean, float, and integer types) that could influence the detection of phishing websites. The proposed features are divided into three categories: URL-based features, content features, and external features. From these proposed variables, we selected five features that we consider relevant for detecting phishing websites. For further inspiration and understanding of the problem, we also consulted ~\cite{introduction1} and ~\cite{introduction2}.
 
 \subsection{Chosen Features}
 
-
-\subsubsection{URL-based features:}
-\textbf{Phish Hints} 
+\subsubsection{URL-Based Features}
+\textbf{Phish Hints}
 \begin{itemize}
-    \item \textbf{Description} Number of words in the URL that are typical of phishing websites
-    \item \textbf{Integer} Number 51 in the paper
+    \item \textbf{Description:} Number of words in the URL commonly associated with phishing websites.  
+    \item \textbf{Type:} Integer  
+    \item \textbf{Reference:} Feature 51 in the paper  
 \end{itemize}
 
 \begin{figure}[H]
@@ -112,30 +117,23 @@ To design the fuzzy expert system to detect phishing websites, we consulted ~\ci
             grid style=dashed
         ]
         
-        % Membership function for "Low"
         \addplot[solid, black] coordinates {(0,1) (0,1) (7,0)};
         \addlegendentry{Low}
-        
-        % Membership function for "Medium"
         \addplot[dashed, black] coordinates {(0,0) (7,1) (10,1) (15,0)};
         \addlegendentry{Medium}
-        
-        % Membership function for "High"
         \addplot[dotted, black] coordinates {(10,0) (15,1) (20,1)};
         \addlegendentry{High}
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Phish Hints}
+    \caption{Membership Function for Phish Hints}
 \end{figure}
 
-
-
-
-\textbf{Domain Age} 
+\textbf{Domain Age}
 \begin{itemize}
-    \item \textbf{Description:} Age of the page in months
-    \item \textbf{Integer} Number 83 in the paper
+    \item \textbf{Description:} Age of the website in months.  
+    \item \textbf{Type:} Integer  
+    \item \textbf{Reference:} Feature 83 in the paper  
 \end{itemize}
 
 \begin{figure}[H]
@@ -151,38 +149,28 @@ To design the fuzzy expert system to detect phishing websites, we consulted ~\ci
             grid style=dashed
         ]
         
-        % Membership function for "New"
         \addplot[solid, black] coordinates {(0,1) (12,1) (24,0) (120,0)};
         \addlegendentry{New}
-        
-        % Membership function for "Relatively New"
         \addplot[dashed, black] coordinates {(12,0) (24,1) (48,0)};
         \addlegendentry{Relatively New}
-        
-        % Membership function for "Normal"
         \addplot[dotted, black] coordinates {(24,0) (48,1) (60,0)};
         \addlegendentry{Normal}
-        
-        % Membership function for "Old"
         \addplot[dash dot, black] coordinates {(48,0) (60,1) (80,0)};
         \addlegendentry{Old}
-        
-        % Membership function for "Super Old"
         \addplot[dash dot dot, black] coordinates {(60,0) (80,1) (120,1)};
         \addlegendentry{Super Old}
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Domain Age (in months)}
+    \caption{Membership Function for Domain Age (in months)}
 \end{figure}
 
-
-
-\subsubsection{Content features:}
-\textbf{Ratio External Hyperlinks} 
+\subsubsection{Content Features}
+\textbf{Ratio of External Hyperlinks}
 \begin{itemize}
-    \item \textbf{Description:} The number of external hyperlinks in a web page divided by the total number of hyperlinks
-    \item \textbf{Float} Number 59 in the paper
+    \item \textbf{Description:} The number of external hyperlinks on a webpage divided by the total number of hyperlinks.  
+    \item \textbf{Type:} Float  
+    \item \textbf{Reference:} Feature 59 in the paper  
 \end{itemize}
 
 \begin{figure}[H]
@@ -198,34 +186,24 @@ To design the fuzzy expert system to detect phishing websites, we consulted ~\ci
             grid style=dashed
         ]
         
-        % Membership function for "Low"
         \addplot[solid, black] coordinates {(0,1) (0.1,1) (0.15,0)};
         \addlegendentry{Low}
-        
-        % Membership function for "Medium"
         \addplot[dashed, black] coordinates {(0.1,0) (0.15,1) (0.4,0)};
         \addlegendentry{Medium}
-        
-        % Membership function for "High"
         \addplot[dotted, black] coordinates {(0.15,0) (0.4,1) (1,1)};
         \addlegendentry{High}
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Ratio External}
+    \caption{Membership Function for Ratio of External Hyperlinks}
 \end{figure}
 
-
-
-
-
-
-
-\subsubsection{External features:}
-\textbf{Google Index} 
+\subsubsection{External Features}
+\textbf{Google Index}
 \begin{itemize}
-    \item \textbf{Description:} Whether a page is indexed in Google
-    \item \textbf{Boolean} Number 86 in the paper
+    \item \textbf{Description:} Indicates whether a webpage is indexed by Google.  
+    \item \textbf{Type:} Boolean  
+    \item \textbf{Reference:} Feature 86 in the paper  
 \end{itemize}
 
 \begin{figure}[H]
@@ -240,27 +218,21 @@ To design the fuzzy expert system to detect phishing websites, we consulted ~\ci
             grid style=dashed
         ]
         
-        % Membership function for "No"
         \addplot[solid, black] coordinates {(0,1) (1,0)};
         \addlegendentry{No}
-        
-        % Membership function for "Yes"
         \addplot[dashed, black] coordinates {(0,0) (1,1)};
         \addlegendentry{Yes}
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Google Index}
+    \caption{Membership Function for Google Index}
 \end{figure}
 
-
-
-
-
-\textbf{GTR} 
+\textbf{GTR}
 \begin{itemize}
-    \item \textbf{Description:} It is a slight modification of the usual GTR, created by Google. It means Google Toolbar Rank and takes values from 0 to 10.
-    \item \textbf{Integer} Number 87 in the paper
+    \item \textbf{Description:} Google Toolbar Rank, a value from 0 to 10 that reflects the importance of the webpage.  
+    \item \textbf{Type:} Integer  
+    \item \textbf{Reference:} Feature 87 in the paper  
 \end{itemize}
 
 \begin{figure}[H]
@@ -275,27 +247,20 @@ To design the fuzzy expert system to detect phishing websites, we consulted ~\ci
             grid style=dashed
         ]
         
-        % Membership function for "Low"
         \addplot[solid, black] coordinates {(0,1) (2,1) (3,0) (10,0)};
         \addlegendentry{Low}
-        
-        % Membership function for "Medium"
         \addplot[dashed, black] coordinates {(2,0) (3,1) (5,1) (6,0)};
         \addlegendentry{Medium}
-        
-        % Membership function for "High"
         \addplot[dotted, black] coordinates {(5,0) (6,1) (10,1)};
         \addlegendentry{High}
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Google GTR}
+    \caption{Membership Function for Google Toolbar Rank (GTR)}
 \end{figure}
 
-
-
 \section{Output Variable}
-Our output variable will be the phishing risk, where we will consider 5 different fuzzy sets, see \ref{output_variable}.
+The output variable represents the phishing risk. It is classified into four fuzzy sets, as illustrated in Figure \ref{output_variable}.
 
 \begin{figure}[H]
     \centering
@@ -310,35 +275,29 @@ Our output variable will be the phishing risk, where we will consider 5 differen
             grid style=dashed
         ]
         
-        % Membership function for "Safe"
         \addplot[solid, black] coordinates {(0,1) (0,1) (25,0)};
         \addlegendentry{Safe}
-        
-        % Membership function for "Weak"
         \addplot[dashed, black] coordinates {(0,0) (25,1) (40,1) (50,0)};
         \addlegendentry{Weak}
-        
-        % Membership function for "Strong"
         \addplot[dotted, black] coordinates {(40,0) (50,1) (60,1) (70,0)};
         \addlegendentry{Strong}
-        
-        % Membership function for "Phishing"
         \addplot[dash dot, black] coordinates {(60,0) (70,1) (100,1)};
         \addlegendentry{Phishing}
         
         \end{axis}
     \end{tikzpicture}
-    \caption{Membership Function Phishing Risk (Output Variable)}
+    \caption{Membership Function for Phishing Risk (Output Variable)}
     \label{output_variable}
 \end{figure}
 
+\section{Implementation}
+In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the fuzzy expert system. The system was designed using the Mamdani fuzzy inference method, which is well-suited for decision-making processes that require a human-like reasoning approach. In this system, we employed the minimum (min) operation as the t-norm for the intersection of fuzzy sets, and the maximum (max) operation as the t-conorm for the union of fuzzy sets. For the defuzzification process, we selected the Center of Area (CoA) method, which calculates the centroid of the aggregated fuzzy set to produce a crisp output. This approach ensures that the output is a balanced representation of the input conditions, providing a reliable decision-making framework for detecting phishing websites.
 
+To validate the fuzzy expert system, we employed the MATLAB 3D plot. As this plot only allows the representation of 2 inputs and the output at a time, we viewed the 10 possible combinations, all of which were consistent. At the same time, every possible combination was covered, as no combination was left without a rule being activated.
 
-
-% ----------------
 \section{Rules}
 
-To design the rules involving Google Index, we consulted ~\cite{mainpaper}, where they state that pages not indexed by google are more likely to be phishing websites. For this reason we created the rules in \ref{google_index_rules}.
+To design the rules involving Google Index, we consulted~\cite{mainpaper}, which states that pages not indexed by Google are more likely to be phishing websites. Consequently, we devised the rules listed in Table \ref{google_index_rules}.
 
 \begin{table}[H]
     \centering
@@ -352,19 +311,19 @@ To design the rules involving Google Index, we consulted ~\cite{mainpaper}, wher
     \label{google_index_rules}
 \end{table}
 
-For the GTR, we consulted ~\cite{GTR}, where they state the following:
+For the GTR, we consulted~\cite{GTR}, which states:
 
 \begin{quote}
-    \textit{GTR value is considered as a heuristic because PageRank value for legitimate site will be high and for phishing pages its value will be less}
+    \textit{GTR value is considered as a heuristic because the PageRank value for legitimate sites will be high, whereas for phishing pages, its value will be lower.}
 \end{quote}
 
-In the case of the Phish Hints, it is already explained in ~\cite{mainpaper} that more Phish Hints in the URL is an indicator of a phishing website. For this reason, we introduced the rules in Table \ref{page_rank_phish_hints_rules}.
+Regarding Phish Hints, \cite{mainpaper} explains that a higher number of Phish Hints in a URL indicates a greater likelihood of the website being a phishing site. Accordingly, we defined the rules in Table \ref{page_rank_phish_hints_rules}.
 
 \begin{table}[h]
     \centering
     \begin{tabular}{|l|l|l|l|l|}
     \hline
-    \textbf{GTR} & \textbf{Phis Hints} & \textbf{Operator} & \textbf{Phishing Risk} & \textbf{Weight} \\ \hline
+    \textbf{GTR} & \textbf{Phish Hints} & \textbf{Operator} & \textbf{Phishing Risk} & \textbf{Weight} \\ \hline
     HIGH               &                     &                   & SAFE                   & 1               \\ \hline
     MEDIUM             & LOW                 & AND               & WEAK                   & 0.5             \\ \hline
     MEDIUM             & MEDIUM              & AND               & STRONG                 & 1               \\ \hline
@@ -373,53 +332,51 @@ In the case of the Phish Hints, it is already explained in ~\cite{mainpaper} tha
     LOW                & MEDIUM              & AND               & STRONG                 & 1               \\ \hline
     LOW                & HIGH                & AND               & PHISHY                 & 1               \\ \hline
     \end{tabular}
-    \caption{Rules for Google GTR and Phish Hints}
+    \caption{Rules for GTR and Phish Hints}
     \label{page_rank_phish_hints_rules}
 \end{table}
 
-
-To evaluate the effect of the domain age feature, we consulted ~\cite{domainage}, where they state the following:
+To evaluate the effect of the domain age feature, we consulted~\cite{domainage}, which states:
 
 \begin{quote}
-\textit{The top feature in the list is domain age, which confirms our assumptions that long-running services are statistically more credible}
+\textit{The top feature in the list is domain age, which confirms our assumptions that long-running services are statistically more credible.}
 \end{quote}
 
-For this reason, we will consider that the older the domain, the less likely it is to be a phishing website. On the other hand, to evaluate the effect of the ratio of external hyperlinks, we consulted ~\cite{externalhyperlinks}, where the following is affirmed:
+Thus, we consider older domains less likely to be phishing websites. Similarly, to assess the effect of the ratio of external hyperlinks, we consulted~\cite{externalhyperlinks}, which notes:
 
 \begin{quote}
 \textit{Phishing websites often include numerous external hyperlinks pointing to target websites because cybercriminals frequently replicate the HTML code from legitimate websites to construct their phishing sites.}
 \end{quote}
 
-All of this information, lead to the creation of the rules seen in Table \ref{domainage_hyperlinks_rules}.
+All this information led to the creation of the rules in Table \ref{domainage_hyperlinks_rules}.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{llllll}
-                          &                                     &                                          &                               &                                    &                             \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{Domain Age}}     & \multicolumn{1}{l|}{\textbf{Ratio of Hyperlinks}} & \multicolumn{1}{l|}{\textbf{Operator}} & \multicolumn{1}{l|}{\textbf{Phishing Risk}} & \multicolumn{1}{l|}{\textbf{Weight}} \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{SUPER OLD}      & \multicolumn{1}{l|}{}                    & \multicolumn{1}{l|}{}         & \multicolumn{1}{l|}{SAFE}          & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{OLD}            & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{OR}       & \multicolumn{1}{l|}{SAFE}          & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NORMAL}         & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{WEAK}          & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NORMAL}         & \multicolumn{1}{l|}{MEDIUM}              & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NORMAL}         & \multicolumn{1}{l|}{HIGH}                & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{RELATIVELY NEW} & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{WEAK}          & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{RELATIVELY NEW} & \multicolumn{1}{l|}{MEDIUM}              & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{RELATIVELY NEW} & \multicolumn{1}{l|}{HIGH}                & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{PHISHY}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NEW}            & \multicolumn{1}{l|}{LOW}                 & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{0.5}    \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NEW}            & \multicolumn{1}{l|}{MEDIUM}              & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{STRONG}        & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{NEW}            & \multicolumn{1}{l|}{HIGH}                & \multicolumn{1}{l|}{AND}      & \multicolumn{1}{l|}{PHISHY}        & \multicolumn{1}{l|}{1}      \\ \cline{2-6} 
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Domain Age}     & \textbf{Ratio of Hyperlinks} & \textbf{Operator} & \textbf{Phishing Risk} & \textbf{Weight} \\ \hline
+    SUPER OLD      &                     &                   & SAFE                   & 1               \\ \hline
+    OLD            & LOW                 & OR                & SAFE                   & 0.5             \\ \hline
+    NORMAL         & LOW                 & AND               & WEAK                   & 0.5             \\ \hline
+    NORMAL         & MEDIUM              & AND               & STRONG                 & 0.5             \\ \hline
+    NORMAL         & HIGH                & AND               & STRONG                 & 0.5             \\ \hline
+    RELATIVELY NEW & LOW                 & AND               & WEAK                   & 1               \\ \hline
+    RELATIVELY NEW & MEDIUM              & AND               & STRONG                 & 1               \\ \hline
+    RELATIVELY NEW & HIGH                & AND               & PHISHY                 & 0.5             \\ \hline
+    NEW            & LOW                 & AND               & STRONG                 & 0.5             \\ \hline
+    NEW            & MEDIUM              & AND               & STRONG                 & 1               \\ \hline
+    NEW            & HIGH                & AND               & PHISHY                 & 1               \\ \hline
     \end{tabular}
     \caption{Rules for Domain Age and Ratio of External Hyperlinks}
     \label{domainage_hyperlinks_rules}
 \end{table}
 
-
-
-
 \section{Implementation}
-In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the fuzzy expert system. The system was designed using the Mamdani fuzzy inference method, which is well-suited for decision-making processes that require a human-like reasoning approach. In this system, we employed the minimum (min) operation as the t-norm for the intersection of fuzzy sets, and the maximum (max) operation as the t-conorm for the union of fuzzy sets. For the defuzzification process, we selected the Center of Area (CoA) method, which calculates the centroid of the aggregated fuzzy set to produce a crisp output. This approach ensures that the output is a balanced representation of the input conditions, providing a reliable decision-making framework for detecting phishing websites.
 
-To validate the fuzzy expert system, we employed the MATLAB 3D plot. As this plot only allows the representation of 2 inputs and the output at a time, we viewed the 10 possible combinations, all of which were consistent. At the same time, every possible combination was covered, as no combination was left without a rule being activated.
+In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the fuzzy expert system. The system was designed using the Mamdani fuzzy inference method, which is well-suited for decision-making processes requiring human-like reasoning. In this system, we employed the minimum (min) operation as the t-norm for the intersection of fuzzy sets, and the maximum (max) operation as the t-conorm for the union of fuzzy sets. For the defuzzification process, we selected the Center of Area (CoA) method, which calculates the centroid of the aggregated fuzzy set to produce a crisp output. This approach ensures that the output is a balanced representation of the input conditions, providing a reliable decision-making framework for detecting phishing websites.
+
+To validate the fuzzy expert system, we employed MATLAB 3D plots. As these plots only allow the representation of two inputs and the output at a time, we analyzed all ten possible combinations. The results were consistent, with no combinations left without an activated rule.
+
 
 \section{Testing}
 
@@ -554,18 +511,18 @@ The high Google GTR is a strong indicator of legitimacy. The site also has a low
 
 \section{Complex Fuzzy Expert System}
 
-This fuzzy expert system is structured in two hierarchical layers. The first layer consists of three independent Mamdani fuzzy systems, each analyzing a specific dimension of a website: \textbf{URL-based features}, \textbf{Content-based features}, and \textbf{External-based features}. The outputs from these three systems are then combined in a second-layer Mamdani fuzzy system to compute the overall phishing risk.
+This fuzzy expert system is structured into two hierarchical layers. The first layer consists of three independent Mamdani fuzzy systems, each focusing on a specific dimension of a website: \textbf{URL-based features}, \textbf{Content-based features}, and \textbf{External-based features}. The outputs from these three systems are then combined in a second-layer Mamdani fuzzy system to compute the overall phishing risk score.
 
 \subsection{Layer 1: Feature-Based Risk Assessments}
 
-The first layer is composed of three Mamdani fuzzy inference systems, each focusing on a specific feature category. These systems process their respective input features and generate risk levels as outputs:
+The first layer is composed of three Mamdani fuzzy inference systems, each focusing on a specific feature category. These systems process their respective input features to generate risk levels as outputs:
 
 \begin{itemize}
     \item URL Risk Mamdani System: 
     
     This system evaluates whether characteristics of the URL indicate phishing behavior, such as excessively long URLs or unusual characters.
 
-    Some outputs could be:
+    Examples of outputs include:
     \begin{itemize}
         \item URL Length (f1-f2)
         \item Special Characters in the URL(f4-f20)
@@ -573,20 +530,20 @@ The first layer is composed of three Mamdani fuzzy inference systems, each focus
 
     \item Content Risk Mamdani System:
     
-    This system identifies suspicious behaviors within the webpage content, such as malicious forms or hidden elements designed to deceive users.
+    This system identifies suspicious behaviors in the webpage content, such as malicious forms or hidden elements designed to deceive users.
 
-    Some outputs could be:
+    Examples of outputs include:
     \begin{itemize}
         \item Number of Hyperlinks (f57)
         \item Login Form Actions (f66)
-        \item Presence of Invisible  Iframes (f73)
+        \item Presence of Invisible Iframes (f73)
     \end{itemize}
 
     \item External Risk Mamdani System:
     
-    This system assesses external attributes that provide context about the website's legitimacy, such as its age or popularity.
+    This system assesses external attributes that provide context for the website's legitimacy, such as its age or popularity.
 
-    Some outputs could be:
+    Examples of outputs include:
     \begin{itemize}
         \item Domain Age (f83)
         \item Google Index Presence (f86)
@@ -597,11 +554,11 @@ The first layer is composed of three Mamdani fuzzy inference systems, each focus
 
 \subsection{Layer 2: Overall Phishing Risk Assessment}
 
-The second layer takes the outputs from the first layer (URL Risk, Content Risk, External Risk) and synthesizes them into an overall phishing risk score using another Mamdani fuzzy inference system. Each of these risks carries a specific weight that reflects its relative importance in detecting phishing. The weights are designed to balance sensitivity (detecting as many phishing websites as possible) and precision (minimizing false positives).
+The second layer takes the outputs from the first layer (URL Risk, Content Risk, External Risk) and combines them into an overall phishing risk score using another Mamdani fuzzy inference system. Each of these risks carries a specific weight, reflecting its relative importance in detecting phishing. The weights are designed to balance sensitivity (detecting as many phishing websites as possible) and precision (minimizing false positives).
 
 \subsection{Weight Distribution}
 
-The importance of each risk category (URL, Content, External) varies depending on how strongly it correlates with phishing behavior. By assigning appropriate weights, the system can prioritize the most reliable and impactful indicators:
+The importance of each risk category (URL, Content, External) varies based on its correlation with phishing behavior. By assigning appropriate weights, the system can prioritize the most reliable and significant indicators:
 
 \begin{itemize}
     \item URL Risk (40\%-50\%):
@@ -617,7 +574,6 @@ The importance of each risk category (URL, Content, External) varies depending o
     External risks carry the lowest weight because they are indirect indicators. While they add valuable context, they are less conclusive compared to URL or content risks.
 
 \end{itemize}
-
 
 
 \begin{figure}[h!]
