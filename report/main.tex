@@ -232,7 +232,7 @@ To design the fuzzy expert system for detecting phishing websites, we referred t
 \begin{itemize}
     \item \textbf{Description:} Google Toolbar Rank, a value from 0 to 10 that reflects the importance of the webpage.  
     \item \textbf{Type:} Integer  
-    \item \textbf{Reference:} Feature 87 in the paper  
+    \item \textbf{Reference:} Similar to feature 87 in the paper, which is PageRank
 \end{itemize}
 
 \begin{figure}[H]
@@ -290,14 +290,11 @@ The output variable represents the phishing risk. It is classified into four fuz
     \label{output_variable}
 \end{figure}
 
-\section{Implementation}
-In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the fuzzy expert system. The system was designed using the Mamdani fuzzy inference method, which is well-suited for decision-making processes that require a human-like reasoning approach. In this system, we employed the minimum (min) operation as the t-norm for the intersection of fuzzy sets, and the maximum (max) operation as the t-conorm for the union of fuzzy sets. For the defuzzification process, we selected the Center of Area (CoA) method, which calculates the centroid of the aggregated fuzzy set to produce a crisp output. This approach ensures that the output is a balanced representation of the input conditions, providing a reliable decision-making framework for detecting phishing websites.
 
-To validate the fuzzy expert system, we employed the MATLAB 3D plot. As this plot only allows the representation of 2 inputs and the output at a time, we viewed the 10 possible combinations, all of which were consistent. At the same time, every possible combination was covered, as no combination was left without a rule being activated.
 
 \section{Rules}
 
-To design the rules involving Google Index, we consulted~\cite{mainpaper}, which states that pages not indexed by Google are more likely to be phishing websites. Consequently, we devised the rules listed in Table \ref{google_index_rules}.
+To design the rules involving Google Index, we consulted~\cite{mainpaper}, which states that pages not indexed by Google are more likely to be phishing websites. Consequently, we created the rules listed in Table \ref{google_index_rules}.
 
 \begin{table}[H]
     \centering

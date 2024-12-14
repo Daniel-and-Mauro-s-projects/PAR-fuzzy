@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global/global}
-    \entry{externalhyperlinks}{article}{}{}
+  \datalist[entry]{nty/global//global/global}
+    \entry{externalhyperlinks}{article}{}
       \name{author}{7}{}{%
         {{hash=0f0f0d6c0fbd9f174327c7364de3fd71}{%
            family={Aljofey},
@@ -59,12 +59,10 @@
       }
       \strng{namehash}{69838742d3d4f97fa156628122ea1094}
       \strng{fullhash}{a7de98c7fb4d0e0057a2a32fa493e41b}
-      \strng{fullhashraw}{a7de98c7fb4d0e0057a2a32fa493e41b}
       \strng{bibnamehash}{69838742d3d4f97fa156628122ea1094}
       \strng{authorbibnamehash}{69838742d3d4f97fa156628122ea1094}
       \strng{authornamehash}{69838742d3d4f97fa156628122ea1094}
       \strng{authorfullhash}{a7de98c7fb4d0e0057a2a32fa493e41b}
-      \strng{authorfullhashraw}{a7de98c7fb4d0e0057a2a32fa493e41b}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
@@ -78,7 +76,7 @@
       \field{pages}{8842}
       \range{pages}{1}
     \endentry
-    \entry{introduction2}{article}{}{}
+    \entry{introduction2}{article}{}
       \name{author}{5}{}{%
         {{hash=069d775c075a4b6fb9856a8fe77591d0}{%
            family={Dou},
@@ -108,12 +106,10 @@
       }
       \strng{namehash}{1c4c775b9514829a83350dbdb8dfc2b4}
       \strng{fullhash}{e06bb74d62e473345fc45ee69151d2a9}
-      \strng{fullhashraw}{e06bb74d62e473345fc45ee69151d2a9}
       \strng{bibnamehash}{1c4c775b9514829a83350dbdb8dfc2b4}
       \strng{authorbibnamehash}{1c4c775b9514829a83350dbdb8dfc2b4}
       \strng{authornamehash}{1c4c775b9514829a83350dbdb8dfc2b4}
       \strng{authorfullhash}{e06bb74d62e473345fc45ee69151d2a9}
-      \strng{authorfullhashraw}{e06bb74d62e473345fc45ee69151d2a9}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -130,7 +126,7 @@
       \endverb
       \keyw{Systematics;Phishing;Feature extraction;Web sites;Phishing;Phishing website detection;software based methods}
     \endentry
-    \entry{mainpaper}{article}{}{}
+    \entry{mainpaper}{article}{}
       \name{author}{2}{}{%
         {{hash=fa59f35fa3ad7439b88210c1580e6b64}{%
            family={Hannousse},
@@ -145,12 +141,10 @@
       }
       \strng{namehash}{a41c3fe989befec4c875b4ab3d20c286}
       \strng{fullhash}{a41c3fe989befec4c875b4ab3d20c286}
-      \strng{fullhashraw}{a41c3fe989befec4c875b4ab3d20c286}
       \strng{bibnamehash}{a41c3fe989befec4c875b4ab3d20c286}
       \strng{authorbibnamehash}{a41c3fe989befec4c875b4ab3d20c286}
       \strng{authornamehash}{a41c3fe989befec4c875b4ab3d20c286}
       \strng{authorfullhash}{a41c3fe989befec4c875b4ab3d20c286}
-      \strng{authorfullhashraw}{a41c3fe989befec4c875b4ab3d20c286}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -173,7 +167,7 @@
       \endverb
       \keyw{Website phishing attacks,Machine learning,Dataset benchmarking,Information security}
     \endentry
-    \entry{domainage}{article}{}{}
+    \entry{domainage}{article}{}
       \name{author}{5}{}{%
         {{hash=67b62cb27c3f0ca6152ead01e078b17a}{%
            family={Hranický},
@@ -203,12 +197,10 @@
       }
       \strng{namehash}{941536d0b3f9e054efc2f582fdb18cb0}
       \strng{fullhash}{51d6ef0e08b5f9177ffc74e09da20b5a}
-      \strng{fullhashraw}{51d6ef0e08b5f9177ffc74e09da20b5a}
       \strng{bibnamehash}{941536d0b3f9e054efc2f582fdb18cb0}
       \strng{authorbibnamehash}{941536d0b3f9e054efc2f582fdb18cb0}
       \strng{authornamehash}{941536d0b3f9e054efc2f582fdb18cb0}
       \strng{authorfullhash}{51d6ef0e08b5f9177ffc74e09da20b5a}
-      \strng{authorfullhashraw}{51d6ef0e08b5f9177ffc74e09da20b5a}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -223,7 +215,7 @@
       \endverb
       \keyw{Training;Support vector machines;Phishing;Soft sensors;Standards organizations;Machine learning;Vectors;Phishing;Domain;Detection;Machine learning;XGBoost;Features;DNS;RDAP;TLS;GeoIP}
     \endentry
-    \entry{GTR}{article}{}{}
+    \entry{GTR}{article}{}
       \name{author}{2}{}{%
         {{hash=032521cf91e87e95ee89b54219120d3a}{%
            family={Naga\bibnamedelimb Venkata\bibnamedelima Sunil},
@@ -238,12 +230,10 @@
       }
       \strng{namehash}{0eee592fc28ca41939c4bd92939db91b}
       \strng{fullhash}{0eee592fc28ca41939c4bd92939db91b}
-      \strng{fullhashraw}{0eee592fc28ca41939c4bd92939db91b}
       \strng{bibnamehash}{0eee592fc28ca41939c4bd92939db91b}
       \strng{authorbibnamehash}{0eee592fc28ca41939c4bd92939db91b}
       \strng{authornamehash}{0eee592fc28ca41939c4bd92939db91b}
       \strng{authorfullhash}{0eee592fc28ca41939c4bd92939db91b}
-      \strng{authorfullhashraw}{0eee592fc28ca41939c4bd92939db91b}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{labelnamesource}{author}
@@ -258,7 +248,7 @@
       \endverb
       \keyw{Google;Accuracy;IP networks;Training;Web sites;Testing;Electronic mail;Phishing;PageRank;Google Toolbar Rank}
     \endentry
-    \entry{introduction1}{article}{}{}
+    \entry{introduction1}{article}{}
       \name{author}{3}{}{%
         {{hash=34378122043de39be7ef0fb5e9d5a25b}{%
            family={Zieni},
@@ -278,12 +268,10 @@
       }
       \strng{namehash}{59e322db237817a8c2315508acff4a3a}
       \strng{fullhash}{59e322db237817a8c2315508acff4a3a}
-      \strng{fullhashraw}{59e322db237817a8c2315508acff4a3a}
       \strng{bibnamehash}{59e322db237817a8c2315508acff4a3a}
       \strng{authorbibnamehash}{59e322db237817a8c2315508acff4a3a}
       \strng{authornamehash}{59e322db237817a8c2315508acff4a3a}
       \strng{authorfullhash}{59e322db237817a8c2315508acff4a3a}
-      \strng{authorfullhashraw}{59e322db237817a8c2315508acff4a3a}
       \field{sortinit}{Z}
       \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
       \field{labelnamesource}{author}
