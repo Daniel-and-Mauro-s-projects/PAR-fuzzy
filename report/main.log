@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.24)  14 DEC 2024 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.24)  16 DEC 2024 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,7 +1160,7 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into
 your preamble.
  on input line 36.
 
-<Logo_URV.png, id=87, 752.8125pt x 747.9945pt>
+<Logo_URV.png, id=91, 752.8125pt x 747.9945pt>
 File: Logo_URV.png Graphic file (type png)
 <use Logo_URV.png>
 Package pdftex.def Info: Logo_URV.png  used on input line 62.
@@ -1180,7 +1180,7 @@ been already used, duplicate ignored
 l.82 \newpage
               [1] [2{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }] [3] [4] [5] [6]
-<test-1.png, id=177, 606.46574pt x 361.95226pt>
+<test-1.png, id=183, 606.46574pt x 361.95226pt>
 File: test-1.png Graphic file (type png)
 <use test-1.png>
 Package pdftex.def Info: test-1.png  used on input line 401.
@@ -1190,7 +1190,7 @@ Package pdftex.def Info: test-1.png  used on input line 401.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7]
-<test-2.png, id=186, 588.39825pt x 361.95226pt>
+<test-2.png, id=190, 588.39825pt x 361.95226pt>
 File: test-2.png Graphic file (type png)
 <use test-2.png>
 Package pdftex.def Info: test-2.png  used on input line 431.
@@ -1206,7 +1206,7 @@ eb . com / lecture _ notes / membrane _ transport / secondary _ active _
  []
 
 [8 <./test-1.png>]
-<test-3.png, id=195, 653.44125pt x 362.5545pt>
+<test-3.png, id=198, 653.44125pt x 362.5545pt>
 File: test-3.png Graphic file (type png)
 <use test-3.png>
 Package pdftex.def Info: test-3.png  used on input line 462.
@@ -1216,7 +1216,7 @@ Package pdftex.def Info: test-3.png  used on input line 462.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [9 <./test-2.png>]
-<test-4.png, id=205, 624.53325pt x 370.38374pt>
+<test-4.png, id=207, 624.53325pt x 370.38374pt>
 File: test-4.png Graphic file (type png)
 <use test-4.png>
 Package pdftex.def Info: test-4.png  used on input line 492.
@@ -1334,7 +1334,99 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[13] (./main.aux)
+[13]
+<surface_plots/domain_age_google_index.png, id=240, 649.4664pt x 540.0978pt>
+File: surface_plots/domain_age_google_index.png Graphic file (type png)
+<use surface_plots/domain_age_google_index.png>
+Package pdftex.def Info: surface_plots/domain_age_google_index.png  used on inp
+ut line 636.
+(pdftex.def)             Requested size: 230.46576pt x 191.65776pt.
+<surface_plots/domain_age_google_page_rank.png, id=241, 649.9482pt x 542.5068pt
+>
+File: surface_plots/domain_age_google_page_rank.png Graphic file (type png)
+<use surface_plots/domain_age_google_page_rank.png>
+Package pdftex.def Info: surface_plots/domain_age_google_page_rank.png  used on
+ input line 642.
+(pdftex.def)             Requested size: 230.46576pt x 192.36362pt.
+<surface_plots/domain_age_pish_hints.png, id=242, 650.43pt x 540.5796pt>
+File: surface_plots/domain_age_pish_hints.png Graphic file (type png)
+<use surface_plots/domain_age_pish_hints.png>
+Package pdftex.def Info: surface_plots/domain_age_pish_hints.png  used on input
+ line 649.
+(pdftex.def)             Requested size: 230.46576pt x 191.54004pt.
+<surface_plots/domain_age_ratio_external.png, id=243, 649.9482pt x 542.5068pt>
+File: surface_plots/domain_age_ratio_external.png Graphic file (type png)
+<use surface_plots/domain_age_ratio_external.png>
+Package pdftex.def Info: surface_plots/domain_age_ratio_external.png  used on i
+nput line 655.
+(pdftex.def)             Requested size: 230.46576pt x 192.36362pt.
+<surface_plots/google_index_google_page_rank.png, id=244, 649.9482pt x 540.5796
+pt>
+File: surface_plots/google_index_google_page_rank.png Graphic file (type png)
+<use surface_plots/google_index_google_page_rank.png>
+Package pdftex.def Info: surface_plots/google_index_google_page_rank.png  used 
+on input line 662.
+(pdftex.def)             Requested size: 230.46576pt x 191.68027pt.
+<surface_plots/phish_hints_google_index.png, id=245, 650.43pt x 540.5796pt>
+File: surface_plots/phish_hints_google_index.png Graphic file (type png)
+<use surface_plots/phish_hints_google_index.png>
+Package pdftex.def Info: surface_plots/phish_hints_google_index.png  used on in
+put line 668.
+(pdftex.def)             Requested size: 230.46576pt x 191.54004pt.
+<surface_plots/phish_hints_google_page_rank.png, id=246, 650.43pt x 540.5796pt>
+
+File: surface_plots/phish_hints_google_page_rank.png Graphic file (type png)
+<use surface_plots/phish_hints_google_page_rank.png>
+Package pdftex.def Info: surface_plots/phish_hints_google_page_rank.png  used o
+n input line 676.
+(pdftex.def)             Requested size: 230.46576pt x 191.54004pt.
+<surface_plots/phish_hints_ratio_external.png, id=247, 650.43pt x 540.5796pt>
+File: surface_plots/phish_hints_ratio_external.png Graphic file (type png)
+<use surface_plots/phish_hints_ratio_external.png>
+Package pdftex.def Info: surface_plots/phish_hints_ratio_external.png  used on 
+input line 682.
+(pdftex.def)             Requested size: 230.46576pt x 191.54004pt.
+<surface_plots/ratio_external_google_index.png, id=248, 649.9482pt x 541.0614pt
+>
+File: surface_plots/ratio_external_google_index.png Graphic file (type png)
+<use surface_plots/ratio_external_google_index.png>
+Package pdftex.def Info: surface_plots/ratio_external_google_index.png  used on
+ input line 689.
+(pdftex.def)             Requested size: 230.46576pt x 191.85109pt.
+<surface_plots/ratio_external_google_page_rank.png, id=249, 652.839pt x 541.061
+4pt>
+File: surface_plots/ratio_external_google_page_rank.png Graphic file (type png)
+
+<use surface_plots/ratio_external_google_page_rank.png>
+Package pdftex.def Info: surface_plots/ratio_external_google_page_rank.png  use
+d on input line 695.
+(pdftex.def)             Requested size: 230.46576pt x 191.00073pt.
+
+Overfull \vbox (23.25052pt too high) has occurred while \output is active []
+
+
+[14 <./surface_plots/domain_age_google_index.png (PNG copy)> <./surface_plots/d
+omain_age_google_page_rank.png (PNG copy)> <./surface_plots/domain_age_pish_hin
+ts.png (PNG copy)> <./surface_plots/domain_age_ratio_external.png (PNG copy)> <
+./surface_plots/google_index_google_page_rank.png (PNG copy)> <./surface_plots/
+phish_hints_google_index.png (PNG copy)>] [15 <./surface_plots/phish_hints_goog
+le_page_rank.png (PNG copy)> <./surface_plots/phish_hints_ratio_external.png (P
+NG copy)> <./surface_plots/ratio_external_google_index.png (PNG copy)> <./surfa
+ce_plots/ratio_external_google_page_rank.png (PNG copy)>]
+
+! LaTeX Error: \begin{appendices} on input line 629 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.704 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+(./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1343,71 +1435,37 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: DF09606677B1F5A1F056F585124871C2;3249
-(rerunfilecheck)             After:  166884741803DC70B2EB0C9971C72BD9;3135.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: ABD76856106B25EC38E7ECB77F517EDA;3430.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 629 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 40828 strings out of 474222
- 925323 string characters out of 5748732
+ 40903 strings out of 474222
+ 928981 string characters out of 5748732
  1955975 words of memory out of 5000000
- 62461 multiletter control sequences out of 15000+600000
- 564762 words of font info for 59 fonts, out of 8000000 for 9000
+ 62538 multiletter control sequences out of 15000+600000
+ 565368 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,19n,93p,1129b,2172s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.8.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.8} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.7.1.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.7.1.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.7.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.7.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
-m1095.pfb>
-Output written on main.pdf (14 pages, 502277 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfrm1095.pfb>
+Output written on main.pdf (16 pages, 1958097 bytes).
 PDF statistics:
- 298 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

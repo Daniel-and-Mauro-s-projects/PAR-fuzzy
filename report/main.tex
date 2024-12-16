@@ -372,7 +372,7 @@ All this information led to the creation of the rules in Table \ref{domainage_hy
 
 In our implementation, we utilized the MATLAB Fuzzy Logic Toolbox to develop the fuzzy expert system. The system was designed using the Mamdani fuzzy inference method, which is well-suited for decision-making processes requiring human-like reasoning. In this system, we employed the minimum (min) operation as the t-norm for the intersection of fuzzy sets, and the maximum (max) operation as the t-conorm for the union of fuzzy sets. For the defuzzification process, we selected the Center of Area (CoA) method, which calculates the centroid of the aggregated fuzzy set to produce a crisp output. This approach ensures that the output is a balanced representation of the input conditions, providing a reliable decision-making framework for detecting phishing websites.
 
-To validate the fuzzy expert system, we employed MATLAB 3D plots. As these plots only allow the representation of two inputs and the output at a time, we analyzed all ten possible combinations. The results were consistent, with no combinations left without an activated rule.
+To validate the fuzzy expert system, we employed MATLAB 3D plots. As these plots only allow the representation of two inputs and the output at a time, we analyzed all ten possible combinations (See them in Appendix \ref{surfaceplots}). The results were consistent, with no combinations left without an activated rule.
 
 
 \section{Testing}
@@ -620,9 +620,84 @@ The importance of each risk category (URL, Content, External) varies based on it
     \caption{Hierarchical Fuzzy Expert System for Phishing Detection with Rule Blocks}
     \label{fig:phishing_system_with_rules}
 \end{figure}
+
 % Bibliography
 \newpage
 \printbibliography
+
+% Appendices
+\newpage
+\begin{appendices}
+\section{Surface Plots for Test Cases}
+\label{surfaceplots}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/domain_age_google_index.png}
+        \centering
+        \textbf{Control Surface: Domain Age vs Google Index}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/domain_age_google_page_rank.png}
+        \centering
+        \textbf{Control Surface: Domain Age vs Google Page Rank}
+    \end{minipage}
+    \vspace{0.5cm}
+    
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/domain_age_pish_hints.png}
+        \centering
+        \textbf{Control Surface: Domain Age vs Phish Hints}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/domain_age_ratio_external.png}
+        \centering
+        \textbf{Control Surface: Domain Age vs Ratio of External Hyperlinks}
+    \end{minipage}
+    \vspace{0.5cm}
+    
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/google_index_google_page_rank.png}
+        \centering
+        \textbf{Control Surface: Google Index vs Google Page Rank}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/phish_hints_google_index.png}
+        \centering
+        \textbf{Control Surface: Phish Hints vs Google Index}
+    \end{minipage}
+    \vspace{0.5cm}
+\end{figure}
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/phish_hints_google_page_rank.png}
+        \centering
+        \textbf{Control Surface: Phish Hints vs Google Page Rank}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/phish_hints_ratio_external.png}
+        \centering
+        \textbf{Control Surface: Phish Hints vs Ratio of External Hyperlinks}
+    \end{minipage}
+    \vspace{0.5cm}
+    
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/ratio_external_google_index.png}
+        \centering
+        \textbf{Control Surface: Ratio of External Hyperlinks vs Google Index}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{surface_plots/ratio_external_google_page_rank.png}
+        \centering
+        \textbf{Control Surface: Ratio of External Hyperlinks vs Google Page Rank}
+    \end{minipage}
+\end{figure}
 
 
 \end{document}
